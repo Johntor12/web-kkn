@@ -1,6 +1,8 @@
 "use client";
 import * as React from "react";
 import { useRouter } from "next/navigation"; // ✅ Tambahkan router
+import Image from "next/image";
+
 
 interface NewsCardProps {
   imageUrl: string;
@@ -21,7 +23,9 @@ const NewsCard: React.FC<NewsCardProps> = ({
 }) => {
   return (
     <article className="absolute shrink-0 rounded-2xl border-4 border-blue-600 border-solid bg-zinc-100 h-[650px] left-[366px] top-[127px] w-[451px] max-md:relative max-md:top-0 max-md:left-0 max-md:pb-8 max-md:mx-auto max-md:my-0 max-md:w-full max-md:h-auto max-md:max-w-[500px] max-sm:rounded-xl max-sm:border-[3px]">
-      <img
+      <Image
+        width={1000}
+        height={1000}
         src={imageUrl}
         alt=""
         className="absolute top-4 shrink-0 rounded-lg h-[286px] left-[17px] w-[417px] max-md:object-cover max-md:top-4 max-md:h-[250px] max-md:left-[17px] max-md:w-[calc(100%_-_34px)] max-sm:rounded-md max-sm:h-[200px]"
@@ -70,12 +74,16 @@ const SideImages: React.FC<SideImagesProps> = ({
 }) => {
   return (
     <>
-      <img
+      <Image
+        width={1000}
+        height={1000}
         src={leftImageUrl}
         alt=""
         className="absolute left-0 shrink-0 h-[625px] top-[152px] w-[560px] max-md:hidden"
       />
-      <img
+      <Image
+        width={1000}
+        height={1000}
         src={rightImageUrl}
         alt=""
         className="absolute shrink-0 h-[625px] left-[612px] top-[152px] w-[560px] max-md:hidden"

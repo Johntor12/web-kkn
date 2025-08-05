@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 
 const transportasiData = [
@@ -45,9 +46,8 @@ const TransportasiPage = () => {
             {transportasiData.map((item, index) => (
               <tr
                 key={index}
-                className={`${
-                  index % 2 === 0 ? "bg-gray-50" : "bg-gray-100"
-                } hover:bg-green-50 transition text-black`}
+                className={`${index % 2 === 0 ? "bg-gray-50" : "bg-gray-100"
+                  } hover:bg-green-50 transition text-black`}
               >
                 <td className="px-6 h-20 border border-gray-400 text-center font-medium">
                   {index + 1}
@@ -67,7 +67,9 @@ const TransportasiPage = () => {
                   </a>
                 </td>
                 <td className="px-6 h-20 border border-gray-400 text-center">
-                  <img
+                  <Image
+                    width={1000}
+                    height={1000}
                     src={item.gambar}
                     alt={item.nama}
                     className="w-full max-w-[250px] h-36 object-cover rounded-md shadow mx-auto"

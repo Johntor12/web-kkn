@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const StrukturOrganisasi = () => {
   const data = [
@@ -25,7 +26,9 @@ const StrukturOrganisasi = () => {
             className="border-3 border-blue-400 rounded-lg overflow-hidden w-[350px] bg-white shadow-lg"
           >
             <div className="w-full h-[350px] bg-gray-100">
-              <img
+              <Image
+                width={1000}
+                height={1000}
                 src="/strukturorganisasi/camat.svg"
                 alt={item.jabatan}
                 className="w-full h-full object-cover"
@@ -49,7 +52,9 @@ const StrukturOrganisasi = () => {
         </h2>
         {/* Gambar Bagan */}
         <div className="w-full flex justify-center">
-          <img
+          <Image
+            width={1000}
+            height={1000}
             src="/strukturorganisasi/bagan.svg"
             alt="Bagan Struktur Organisasi"
             className="w-full max-w-[1400px] h-auto"
