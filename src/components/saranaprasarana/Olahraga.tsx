@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-import Image from "next/image";
 import React from "react";
 
 const olahragaData = [
@@ -65,7 +65,7 @@ const OlahragaPage = () => {
                   </a>
                 </td>
                 <td className="px-6 h-20 border border-gray-400 text-center">
-                  <Image
+                  <img
                     width={1000}
                     height={1000}
                     src={item.gambar}

@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-import Image from "next/image";
 import React from "react";
 
 const kesehatanData = [
@@ -63,7 +63,7 @@ const KesehatanPage = () => {
                   </a>
                 </td>
                 <td className="px-6 h-20 border border-gray-400 text-center">
-                  <Image
+                  <img
                     height={1000}
                     width={1000}
                     src={item.gambar}

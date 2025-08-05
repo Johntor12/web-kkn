@@ -8,6 +8,7 @@ export interface UMKMCardProps {
   onViewMore?: () => void;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const UMKMCard = ({ name, description, imageUrl, onViewMore }: UMKMCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 

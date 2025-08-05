@@ -7,6 +7,7 @@ interface KesenianItemProps {
   imageUrl: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const KesenianCard = ({ name, description, imageUrl }: KesenianItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
 

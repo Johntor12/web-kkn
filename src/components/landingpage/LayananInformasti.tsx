@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useState } from "react";
 import Image from "next/image";
@@ -81,7 +82,7 @@ const LayananInformasiCard = ({
       >
         <div className="flex flex-col gap-[0.625vw] items-center z-10">
           <div className="relative bg-white w-[13.021vw] aspect-[250/206] rounded-[1.563vw] flex items-center justify-center">
-            <Image
+            <img
               width={1000}
               height={1000}
               src={iconSrc}

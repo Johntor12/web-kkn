@@ -7,6 +7,7 @@ interface AdatItemProps {
   imageUrl: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const AdatCard = ({ name, description, imageUrl }: AdatItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
