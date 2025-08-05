@@ -13,7 +13,7 @@ export function useCreateBerita<T>() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.post('http://localhost:4000/api/news/new', beritaData, {
+      const res = await axios.post('https://www.web-sebatikbarat.web.id/api/news/new', beritaData, {
         withCredentials: true,
       });
       if (res.status !== 201) throw new Error(res.data.message);
@@ -37,7 +37,7 @@ export function useGetBeritaById() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get(`http://localhost:4000/api/news/berita/${beritaId}`, {
+      const res = await axios.get(`https://www.web-sebatikbarat.web.id/api/news/berita/${beritaId}`, {
         withCredentials: true,
       });
       if (res.status !== 200) throw new Error(res.data.message);
@@ -61,7 +61,7 @@ export function useSearchBerita<T>() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get(`http://localhost:4000/api/news/search?keyword=${keyword}`, {
+      const res = await axios.get(`https://www.web-sebatikbarat.web.id/api/news/search?keyword=${keyword}`, {
         withCredentials: true,
       });
       if (res.status !== 200) throw new Error(res.data.message);
@@ -85,7 +85,7 @@ export function useGetBeritaByDesa<T>() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get(`http://localhost:4000/api/news/desa/${desa}`, {
+      const res = await axios.get(`https://www.web-sebatikbarat.web.id/api/news/desa/${desa}`, {
         withCredentials: true,
       });
       if (res.status !== 200) throw new Error(res.data.message);
@@ -109,7 +109,7 @@ export function useUpdateBerita<T>() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.put(`http://localhost:4000/api/news/${beritaId}`, updateData, {
+      const res = await axios.put(`https://www.web-sebatikbarat.web.id/api/news/${beritaId}`, updateData, {
         withCredentials: true,
       });
       if (res.status !== 200) throw new Error(res.data.message);
@@ -133,7 +133,7 @@ export function useDeleteBerita<T>() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.delete(`http://localhost:4000/api/news/${beritaId}`, {
+      const res = await axios.delete(`https://www.web-sebatikbarat.web.id/api/news/${beritaId}`, {
         withCredentials: true,
       });
       if (res.status !== 200) throw new Error(res.data.message);
@@ -157,7 +157,7 @@ export function useGetMyBerita() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get('http://localhost:4000/api/news/all', {
+      const res = await axios.get('https://www.web-sebatikbarat.web.id/api/news/all', {
         withCredentials: true,
       });
       if (res.status !== 200) throw new Error(res.data.message);
