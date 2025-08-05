@@ -6,31 +6,31 @@ const WelcomePage = () => {
   const text1 = "SEBATIK";
   const text2 = "BARAT";
 
-  const letterAnimationRight = {
-    hidden: { x: 50, opacity: 0 },
-    visible: (i: number) => ({
-      x: 0,
-      opacity: 1,
-      transition: {
-        delay: i * 0.2,
-        duration: 1.0,
-        ease: "easeOut",
-      },
-    }),
-  };
+  // const letterAnimationRight = {
+  //   hidden: { x: 50, opacity: 0 },
+  //   visible: (i: number) => ({
+  //     x: 0,
+  //     opacity: 1,
+  //     transition: {
+  //       delay: i * 0.2,
+  //       duration: 1.0,
+  //       ease: [0.25, 0.1, 0.25, 1], // Cubic bezier untuk easeOut
+  //     },
+  //   }),
+  // };
 
-  const letterAnimationLeft = {
-    hidden: { x: -50, opacity: 0 },
-    visible: (i: number) => ({
-      x: 0,
-      opacity: 1,
-      transition: {
-        delay: i * 0.3,
-        duration: 1.0,
-        ease: "easeOut",
-      },
-    }),
-  };
+  // const letterAnimationLeft = {
+  //   hidden: { x: -50, opacity: 0 },
+  //   visible: (i: number) => ({
+  //     x: 0,
+  //     opacity: 1,
+  //     transition: {
+  //       delay: i * 0.3,
+  //       duration: 1.0,
+  //       ease: [0.25, 0.1, 0.25, 1], // Cubic bezier untuk easeOut
+  //     },
+  //   }),
+  // };
 
   return (
     <div className="relative w-screen h-screen">
@@ -52,7 +52,7 @@ const WelcomePage = () => {
               custom={i}
               initial="hidden"
               animate="visible"
-              variants={letterAnimationRight}
+              // variants={letterAnimationRight}
               className="font-hankenGrotesk font-black text-[12vw] text-white leading-[1.1] drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)]"
             >
               {char}
@@ -66,7 +66,7 @@ const WelcomePage = () => {
               custom={i}
               initial="hidden"
               animate="visible"
-              variants={letterAnimationLeft}
+              // variants={letterAnimationLeft}
               className="font-hankenGrotesk font-black text-[12vw] text-white leading-[1.1] drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)]"
             >
               {char}
