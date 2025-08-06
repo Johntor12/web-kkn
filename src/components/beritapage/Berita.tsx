@@ -1,7 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 // import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 import BeritaCard from "./BeritaCard";
+import { BeritaDataType } from "@/type/data";
+import { useBerita } from "@/hooks/use-berita";
 
 const beritaList = Array.from({ length: 20 }, (_, i) => ({
   judul: `Judul ${i + 1}`,
@@ -15,7 +18,24 @@ const Berita = () => {
   const totalPages = Math.ceil(beritaList.length / itemsPerPage);
 
   const startIdx = (currentPage - 1) * itemsPerPage;
-  const currentData = beritaList.slice(startIdx, startIdx + itemsPerPage);
+
+  const { getMyBerita } = useBerita();
+  const [data, setData] = React.useState<BeritaDataType[]>([]);
+
+  React.useEffect(() => {
+    async function fetchData() {
+      await getMyBerita.getMyBerita();
+    }
+    fetchData();
+  }, [])
+
+  React.useEffect(() => {
+    if (Array.isArray(getMyBerita.payload?.data)) {
+      setData(getMyBerita.payload.data);
+    }
+  }, [getMyBerita.payload])
+
+  const currentData = data.slice(startIdx, startIdx + itemsPerPage);
 
   const renderPageNumbers = () => {
     const pages = [];
@@ -50,7 +70,7 @@ const Berita = () => {
           <BeritaCard
             key={index}
             judul={berita.judul}
-            content={berita.content}
+            content={berita.isi}
           />
         ))}
       </div>
@@ -71,11 +91,10 @@ const Berita = () => {
               <button
                 key={idx}
                 onClick={() => setCurrentPage(page)}
-                className={`w-8 h-8 rounded-md font-semibold text-sm ${
-                  page === currentPage
+                className={`w-8 h-8 rounded-md font-semibold text-sm ${page === currentPage
                     ? "bg-green-600 text-white"
                     : "text-green-700 hover:bg-green-100"
-                }`}
+                  }`}
               >
                 {page}
               </button>

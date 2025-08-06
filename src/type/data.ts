@@ -40,6 +40,8 @@ export enum ActifityOption {
   berita = "berita",
   peraturan = "peraturan",
   galery = "galery",
+  arsip = "arsip",
+  umkm = "umkm",
 }
 
 export interface SideBarMenu {
@@ -155,3 +157,64 @@ export interface CreateAdminPayload {
   desa: string;
 }
 
+export enum JenisArsip {
+  SK = "sk",
+  SURAT_EDARAN = "surat_edaran",
+  BARANG_DAN_JASA = "barang_dan_jasa",
+  DUK = "duk",
+  REGISTRASI = "registrasi",
+  IPP = "ipp",
+  REKOMENDASI = "rekomendasi",
+  PENGADUAN_MASYARAKAT = "pengaduan_masyarakat"
+}
+
+
+export interface ArsipData {
+  arsipId: number;
+  judul: string;
+  fileUrl: string;
+  jenisArsip: JenisArsip;
+  desa: NamaDesa;
+  uploadedAt: Date;
+}
+
+export interface UmkmData {
+  umkmId: number;
+  namaUmkm: string;
+  gambarUrl: string;
+  deskripsi: string;
+  desa: NamaDesa;
+  mapUrl: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface CreateArsipData {
+  judul: string;
+  fileUrl: string;
+  jenisArsip: JenisArsip | string;
+  desa: NamaDesa | string;
+}
+
+export interface CreateUmkmData {
+  namaUmkm: string;
+  gambarUrl: string;
+  deskripsi: string;
+  desa: NamaDesa | string;
+  mapUrl: string;
+}
+
+export interface UpdateArsipData {
+  judul?: string;
+  fileUrl?: string;
+  jenisArsip?: JenisArsip | string;
+  desa?: NamaDesa | string;
+}
+
+export interface UpdateUmkmData {
+  namaUmkm?: string;
+  gambarUrl?: string;
+  deskripsi?: string;
+  desa?: NamaDesa | string;
+  mapUrl?: string;
+}

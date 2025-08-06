@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
-import { useState } from "react";
+import { useUmkm } from "@/hooks/use-umkm";
+import { UmkmData } from "@/type/data";
+import React, { useState } from "react";
 
 interface UMKMCardProps {
   name: string;
@@ -15,22 +17,20 @@ const UMKMCard = ({ name, description, imageUrl }: UMKMCardProps) => {
     <div
       onMouseEnter={() => setIsCardHovered(true)}
       onMouseLeave={() => setIsCardHovered(false)}
-      className={`grid grid-cols-2 w-[82.5vw] transition-all duration-300 p-[1.5vw] rounded-[1.563vw] border-[0.208vw] drop-shadow-[4px_8px_8px_rgba(0,0,0,0.25)] ${
-        isCardHovered
-          ? "bg-primary-100 text-white cursor-pointer"
-          : "bg-white text-primary-100"
-      } border-primary-100`}
+      className={`grid grid-cols-2 w-[82.5vw] transition-all duration-300 p-[1.5vw] rounded-[1.563vw] border-[0.208vw] drop-shadow-[4px_8px_8px_rgba(0,0,0,0.25)] ${isCardHovered
+        ? "bg-primary-100 text-white cursor-pointer"
+        : "bg-white text-primary-100"
+        } border-primary-100`}
     >
       {/* Info Text */}
       <div className="flex flex-col gap-[0.416vw] p-[0.833vw] text-left ">
         <h1 className="font-montserrat font-bold text-[2.5vw]">{name}</h1>
         <div className="font-montserrat text-[1.25vw]">{description}</div>
         <button
-          className={`mt-2 border border-white px-4 py-2 text-sm font-semibold rounded-md w-fit hover:cursor-pointer ${
-            isCardHovered
-              ? "bg-white text-primary-100 hover:bg-gray-200"
-              : "bg-primary-100 text-white hover:bg-primary-200"
-          } transition`}
+          className={`mt-2 border border-white px-4 py-2 text-sm font-semibold rounded-md w-fit hover:cursor-pointer ${isCardHovered
+            ? "bg-white text-primary-100 hover:bg-gray-200"
+            : "bg-primary-100 text-white hover:bg-primary-200"
+            } transition`}
         >
           View More
         </button>
@@ -95,7 +95,27 @@ export default function UMKMPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(dummyUMKM.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentUMKM = dummyUMKM.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const [data, setData] = React.useState<UmkmData[]>([]);
+
+  const { getAllUmkm } = useUmkm();
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      await getAllUmkm.getAllUmkm();
+    };
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  React.useEffect(() => {
+    if (getAllUmkm.payload?.data && Array.isArray(getAllUmkm.payload.data)) {
+      setData(getAllUmkm.payload.data);
+    }
+  }, [getAllUmkm.payload]);
+
+  const currentUMKM = data.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
 
   return (
     <div className="relative w-full flex flex-col justify-center items-center container py-10">
@@ -105,7 +125,7 @@ export default function UMKMPage() {
 
       <div className="grid grid-rows-4 gap-y-[2.5vw] justify-items-center">
         {currentUMKM.map((umkm, index) => (
-          <UMKMCard key={index} {...umkm} />
+          <UMKMCard key={index} description={umkm.deskripsi} imageUrl={umkm.gambarUrl} name={umkm.namaUmkm} />
         ))}
       </div>
 

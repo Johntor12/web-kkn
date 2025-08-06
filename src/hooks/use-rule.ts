@@ -17,7 +17,7 @@ export function useGetRuleById() {
     setError(null);
     try {
       const res = await axios.get(
-        `https://www.web-sebatikbarat.web.id/api/peraturan/${beritaId}`,
+        `https://www.web-sebatikbarat.web.id/ api/peraturan/${beritaId}`,
         {
           withCredentials: true,
         }
@@ -46,7 +46,7 @@ export function useGetRuleByDesa() {
     setError(null);
     try {
       const res = await axios.get(
-        `https://www.web-sebatikbarat.web.id/api/peraturan/desa/${desa}`,
+        `https://www.web-sebatikbarat.web.id/ api/peraturan/desa/${desa}`,
         {
           withCredentials: true,
         }
@@ -81,7 +81,7 @@ export function useUploadToGoogleDrive() {
       formData.append("pdf", file);
 
       const res = await axios.post(
-        "https://www.web-sebatikbarat.web.id/api/peraturan/upload-docs",
+        "https://www.web-sebatikbarat.web.id/ api/peraturan/upload-docs",
         formData,
         {
           withCredentials: true,
@@ -125,7 +125,7 @@ export function useCreateNewRule() {
 
     try {
       const res = await axios.post(
-        "https://www.web-sebatikbarat.web.id/api/peraturan/upload",
+        "https://www.web-sebatikbarat.web.id/ api/peraturan/upload",
         data,
         {
           withCredentials: true,

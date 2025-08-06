@@ -21,7 +21,7 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"div">) 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await login('https://www.web-sebatikbarat.web.id/api/auth/login', username, password);
+    await login('https://www.web-sebatikbarat.web.id/ api/auth/login', username, password);
   };
 
   React.useEffect(() => {

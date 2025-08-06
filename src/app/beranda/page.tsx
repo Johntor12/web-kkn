@@ -10,6 +10,8 @@ import { InfoStatisticAdminUser, UserInfo } from "@/components/beranda/user-card
 import { GalleryThumbnails, Newspaper, Settings } from "lucide-react";
 import { GalleryData } from "@/components/gallery/gallery-data";
 import AdminLayoutUI from "@/layout/admin-ui";
+import { ArsipData } from "@/components/arsip/arsip-data";
+import { UMKMData } from "@/components/umkm/umkm-data";
 
 export default function BerandaPage() {
     const [option, setOption] = React.useState<ActifityOption>(ActifityOption.beranda);
@@ -60,6 +62,16 @@ export default function BerandaPage() {
                     {option === ActifityOption.peraturan &&
                         <div>
                             <RuleData />
+                        </div>
+                    }
+                    {option === ActifityOption.umkm &&
+                        <div>
+                            <UMKMData />
+                        </div>
+                    }
+                    {option === ActifityOption.arsip &&
+                        <div>
+                            <ArsipData />
                         </div>
                     }
 

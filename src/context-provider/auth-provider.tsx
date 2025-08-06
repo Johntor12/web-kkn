@@ -20,7 +20,7 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
     async function fetchUserGetMe() {
         setIsloading(true);
         try {
-            const res = await axios.get("https://www.web-sebatikbarat.web.id/api/auth/me", {
+            const res = await axios.get("https://www.web-sebatikbarat.web.id/ api/auth/me", {
                 withCredentials: true,
             });
             if (res.status !== 200) throw new Error(res.data.message || "terjadi kesalahan");

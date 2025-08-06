@@ -1,6 +1,6 @@
 import { ActifityOption, AuthContextInterface, SideBarMenu } from "@/type/data";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "./ui/sidebar";
-import { GalleryVerticalIcon, LayoutDashboardIcon, Newspaper, ColumnsSettingsIcon } from "lucide-react";
+import { GalleryVerticalIcon, LayoutDashboardIcon, Newspaper, ColumnsSettingsIcon, Archive, StoreIcon } from "lucide-react";
 import {
     DropdownMenu,
     DropdownMenuTrigger,
@@ -100,6 +100,20 @@ export default function AppSidebar({ onSelect }: { onSelect: (d: ActifityOption)
             name: 'Peraturan',
             icon: ColumnsSettingsIcon,
             optionname: ActifityOption.peraturan,
+            url: "",
+            clickOption: (option) => onSelect(option)
+        },
+        {
+            name: 'UMKM',
+            icon: StoreIcon,
+            optionname: ActifityOption.umkm,
+            url: "",
+            clickOption: (option) => onSelect(option)
+        },
+        {
+            name: 'Arsip',
+            icon: Archive,
+            optionname: ActifityOption.arsip,
             url: "",
             clickOption: (option) => onSelect(option)
         },
