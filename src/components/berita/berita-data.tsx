@@ -126,7 +126,7 @@ export default function BeritaData() {
             },
             {
                 label: "Update Berita",
-                onClick: (row) => redirect(`berita/${row.beritaId}`)
+                onClick: (row) => redirect(`berita-admin/${row.beritaId}`)
             }
         ])
     ]
