@@ -12,7 +12,7 @@ export function useCreateUmkm<T>() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.post('https://www.web-sebatikbarat.web.id/ api/umkm/new', umkmData, {
+      const res = await axios.post('https://www.web-sebatikbarat.web.id/api/umkm/new', umkmData, {
         withCredentials: true,
       });
       if (res.status !== 201) throw new Error(res.data.message);
@@ -36,7 +36,7 @@ export function useGetAllUmkm() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get('https://www.web-sebatikbarat.web.id/ api/umkm', {
+      const res = await axios.get('https://www.web-sebatikbarat.web.id/api/umkm', {
         withCredentials: true,
       });
       if (res.status !== 200) throw new Error(res.data.message);
@@ -60,7 +60,7 @@ export function useGetUmkmById() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get(`https://www.web-sebatikbarat.web.id/ api/umkm/${umkmId}`, {
+      const res = await axios.get(`https://www.web-sebatikbarat.web.id/api/umkm/${umkmId}`, {
         withCredentials: true,
       });
       if (res.status !== 200) throw new Error(res.data.message);
@@ -84,7 +84,7 @@ export function useGetUmkmByDesa<T>() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get(`https://www.web-sebatikbarat.web.id/ api/umkm/desa/${desa}`, {
+      const res = await axios.get(`https://www.web-sebatikbarat.web.id/api/umkm/desa/${desa}`, {
         withCredentials: true,
       });
       if (res.status !== 200) throw new Error(res.data.message);
@@ -108,7 +108,7 @@ export function useUpdateUmkm<T>() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.put(`https://www.web-sebatikbarat.web.id/ api/umkm/${umkmId}`, updateData, {
+      const res = await axios.put(`https://www.web-sebatikbarat.web.id/api/umkm/${umkmId}`, updateData, {
         withCredentials: true,
       });
       if (res.status !== 200) throw new Error(res.data.message);
@@ -132,7 +132,7 @@ export function useDeleteUmkm<T>() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.delete(`https://www.web-sebatikbarat.web.id/ api/umkm/delete/${umkmId}`, {
+      const res = await axios.delete(`https://www.web-sebatikbarat.web.id/api/umkm/delete/${umkmId}`, {
         withCredentials: true,
       });
       if (res.status !== 200) throw new Error(res.data.message);

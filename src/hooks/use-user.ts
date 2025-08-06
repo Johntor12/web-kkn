@@ -14,7 +14,7 @@ export function useUpdateUserData() {
 
     try {
       const response = await axios.put(
-        "https://www.web-sebatikbarat.web.id/ api/user/profile",
+        "https://www.web-sebatikbarat.web.id/api/user/profile",
         payload,
         { withCredentials: true }
       );
@@ -49,7 +49,7 @@ export function useCreateAdminAccount() {
 
     try {
       const response = await axios.post(
-        "https://www.web-sebatikbarat.web.id/ api/user/newadmin",
+        "https://www.web-sebatikbarat.web.id/api/user/newadmin",
         payload,
         { withCredentials: true }
       );

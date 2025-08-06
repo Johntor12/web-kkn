@@ -14,7 +14,7 @@ export function useCreateGaleri() {
 
     try {
       const response = await axios.post(
-        "https://www.web-sebatikbarat.web.id/ api/gallery/upload",
+        "https://www.web-sebatikbarat.web.id/api/gallery/upload",
         payload,
         { withCredentials: true }
       );
@@ -46,7 +46,7 @@ export function useUploadGaleriImage() {
 
     try {
       const response = await axios.post(
-        "https://www.web-sebatikbarat.web.id/ api/gallery/upload-docs",
+        "https://www.web-sebatikbarat.web.id/api/gallery/upload-docs",
         formData,
         {
           headers: {
@@ -80,7 +80,7 @@ export function useDeleteGaleri() {
 
     try {
       const response = await axios.delete(
-        `https://www.web-sebatikbarat.web.id/ api/gallery/${galeriId}`,
+        `https://www.web-sebatikbarat.web.id/api/gallery/${galeriId}`,
         { withCredentials: true }
       );
       setSuccess(true);
@@ -105,7 +105,7 @@ export function useGetAllGaleri() {
     setError(null);
 
     try {
-      const response = await axios.get("https://www.web-sebatikbarat.web.id/ api/gallery/all", {withCredentials: true});
+      const response = await axios.get("https://www.web-sebatikbarat.web.id/api/gallery/all", {withCredentials: true});
       setGaleri(response.data);
     } catch (err) {
       setError(`Gagal mengambil data galeri ${err as Error}`);

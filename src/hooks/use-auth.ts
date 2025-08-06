@@ -39,7 +39,7 @@ export function useLogout() {
 
     try {
       const response = await axios.delete(
-        "https://www.web-sebatikbarat.web.id/ api/auth/logout", // pastikan sesuai endpoint
+        "https://www.web-sebatikbarat.web.id/api/auth/logout", // pastikan sesuai endpoint
         { withCredentials: true }
       );
       return response.data.message;

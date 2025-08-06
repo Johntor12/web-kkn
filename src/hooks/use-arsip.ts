@@ -16,7 +16,7 @@ export function useCreateArsip<T>() {
     setError(null);
     try {
       const res = await axios.post(
-        "https://www.web-sebatikbarat.web.id/ api/arsip/new",
+        "https://www.web-sebatikbarat.web.id/api/arsip/new",
         arsipData,
         {
           withCredentials: true,
@@ -45,7 +45,7 @@ export function useGetAllArsip() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get("https://www.web-sebatikbarat.web.id/ api/arsip", {
+      const res = await axios.get("https://www.web-sebatikbarat.web.id/api/arsip", {
         withCredentials: true,
       });
       if (res.status !== 200) throw new Error(res.data.message);
@@ -72,7 +72,7 @@ export function useGetArsipById() {
     setError(null);
     try {
       const res = await axios.get(
-        `https://www.web-sebatikbarat.web.id/ api/arsip/${arsipId}`,
+        `https://www.web-sebatikbarat.web.id/api/arsip/${arsipId}`,
         {
           withCredentials: true,
         }
@@ -99,7 +99,7 @@ export function useGetArsipByDesa<T>() {
     setError(null);
     try {
       const res = await axios.get(
-        `https://www.web-sebatikbarat.web.id/ api/arsip/desa/${desa}`,
+        `https://www.web-sebatikbarat.web.id/api/arsip/desa/${desa}`,
         {
           withCredentials: true,
         }
@@ -126,7 +126,7 @@ export function useGetArsipByJenis<T>() {
     setError(null);
     try {
       const res = await axios.get(
-        `https://www.web-sebatikbarat.web.id/ api/arsip/jenis/${jenis}`,
+        `https://www.web-sebatikbarat.web.id/api/arsip/jenis/${jenis}`,
         {
           withCredentials: true,
         }
@@ -153,7 +153,7 @@ export function useUpdateArsip<T>() {
     setError(null);
     try {
       const res = await axios.put(
-        `https://www.web-sebatikbarat.web.id/ api/arsip/${arsipId}`,
+        `https://www.web-sebatikbarat.web.id/api/arsip/${arsipId}`,
         updateData,
         {
           withCredentials: true,
@@ -181,7 +181,7 @@ export function useDeleteArsip<T>() {
     setError(null);
     try {
       const res = await axios.delete(
-        `https://www.web-sebatikbarat.web.id/ api/arsip/delete/${arsipId}`,
+        `https://www.web-sebatikbarat.web.id/api/arsip/delete/${arsipId}`,
         {
           withCredentials: true,
         }
@@ -213,7 +213,7 @@ export function useUploadAndCreateArsip<T>() {
       formData.append("pdf", file);
 
       const uploadRes = await axios.post(
-        "https://www.web-sebatikbarat.web.id/ api/arsip/upload-docs",
+        "https://www.web-sebatikbarat.web.id/api/arsip/upload-docs",
         formData,
         {
           withCredentials: true,
@@ -226,7 +226,7 @@ export function useUploadAndCreateArsip<T>() {
       }
 
       const arsipRes = await axios.post(
-        "https://www.web-sebatikbarat.web.id/ api/arsip/new",
+        "https://www.web-sebatikbarat.web.id/api/arsip/new",
         {
           ...arsipData,
           fileUrl: uploadRes.data.docUrl,
