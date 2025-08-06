@@ -1,4 +1,4 @@
-import { ActifityOption, SideBarMenu } from "@/type/data";
+import { ActifityOption, AuthContextInterface, SideBarMenu } from "@/type/data";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "./ui/sidebar";
 import { GalleryVerticalIcon, LayoutDashboardIcon, Newspaper, ColumnsSettingsIcon } from "lucide-react";
 import {
@@ -10,6 +10,8 @@ import {
     AvatarFallback,
 } from "@/components/ui/avatar"
 import { redirect } from "next/navigation";
+import React from "react";
+import AuthContext from "@/context-provider/auth-context";
 
 function NavComponent({ dataItem }: { dataItem: SideBarMenu[] }) {
     return (
@@ -71,6 +73,7 @@ export function NavUser({ name = 'A', email = 'U' }: { name?: string, email?: st
 
 
 export default function AppSidebar({ onSelect }: { onSelect: (d: ActifityOption) => void }) {
+    const { user } = React.useContext<AuthContextInterface>(AuthContext);
     const SidebarMenuItems: SideBarMenu[] = [
         {
             name: 'Beranda',
@@ -111,7 +114,7 @@ export default function AppSidebar({ onSelect }: { onSelect: (d: ActifityOption)
                             asChild
                             className="data-[slot=sidebar-menu-button]:!p-1.5"
                         >
-                            <span className="text-base font-semibold">Admin Binal Options</span>
+                            <span className="text-base font-semibold">Admin Option</span>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 </SidebarMenu>
@@ -122,7 +125,7 @@ export default function AppSidebar({ onSelect }: { onSelect: (d: ActifityOption)
             </SidebarContent>
 
             <SidebarFooter>
-                <NavUser name="admin bilal" email="web@binal.com" />
+                <NavUser name={user?.username} email={user?.email ?? "no-email"} />
             </SidebarFooter>
         </Sidebar>
     );
