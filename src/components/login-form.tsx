@@ -37,7 +37,7 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"div">) 
           <form className="p-6 md:p-8" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
-                <h1 className="text-2xl font-bold">Login Admin Binal</h1>
+                <h1 className="text-2xl font-bold">Login Admin</h1>
                 <p className="text-muted-foreground text-balance">
                   Silahkan Login
                 </p>

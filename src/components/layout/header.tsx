@@ -76,6 +76,7 @@ const navigationItems: MenuItem[] = [
       { label: "Suku", path: "/suku" },
     ],
   },
+  { label: "Admin", path: "/beranda" },
 ];
 
 function NavigationMenu({ items }: { items: MenuItem[] }) {
