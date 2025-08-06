@@ -1,16 +1,31 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { usePeraturan } from "@/hooks/use-rule";
+import { NamaDesa, PeraturanById } from "@/type/data";
+import Link from "next/link";
 
-const regulations = [
-  "Warga diimbau menjaga kelestarian lingkungan pesisir dan hutan mangrove.",
-  "Kegiatan nelayan wajib mengikuti jadwal dan ketentuan desa.",
-  "Dilarang menangkap satwa laut yang dilindungi.",
-  "Setiap kegiatan adat harus mendapatkan persetujuan tokoh adat dan kepala desa.",
-  "Kegiatan hiburan desa harus berakhir maksimal pukul 22.00 WIB.",
-];
 
 export default function DesaSetabuPage() {
+  const { getRuleByDesa } = usePeraturan();
+  const [data, setData] = useState<PeraturanById[]>([]);
+
+  React.useEffect(() => {
+    async function fetchData() {
+      await getRuleByDesa.getRuleByDesa(NamaDesa.setabu);
+    }
+    fetchData();
+  }, [])
+
+  React.useEffect(() => {
+    if (Array.isArray(getRuleByDesa.payload?.data)) {
+      setData(getRuleByDesa.payload.data);
+      console.log(getRuleByDesa.payload?.data);
+    }
+  }, [getRuleByDesa.payload])
+
+
   const [expanded, setExpanded] = useState<number[]>([]);
 
   const toggleExpand = (index: number) => {
@@ -64,13 +79,15 @@ export default function DesaSetabuPage() {
           Peraturan Desa
         </h2>
         <div className="flex flex-col gap-6 max-w-5xl mx-auto">
-          {regulations.map((text, index) => (
+          {data.map((ruleData, index) => (
             <div
               key={index}
               onClick={() => toggleExpand(index)}
               className="bg-green-800 hover:bg-[#1B4526] transition-all duration-300 text-white px-8 py-6 rounded-xl shadow-md cursor-pointer flex justify-between items-center"
             >
-              <span className="text-2xl font-semibold">{text}</span>
+              <Link target="_blank" href={ruleData.fileUrl}>
+                <span className="text-2xl font-semibold">{ruleData.judul}</span>
+              </Link>
               <span className="text-5xl font-bold leading-none">
                 {expanded.includes(index) ? "−" : "+"}
               </span>

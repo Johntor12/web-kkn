@@ -14,7 +14,7 @@ export function LogoutButton() {
     try {
       const message = await logout();
       toast.success(message);
-      router.push("/login");
+      router.push("/");
     } catch (err) {
       toast.error((err as Error).message);
     }
