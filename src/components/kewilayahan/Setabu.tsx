@@ -6,7 +6,6 @@ import { usePeraturan } from "@/hooks/use-rule";
 import { NamaDesa, PeraturanById } from "@/type/data";
 import Link from "next/link";
 
-
 export default function DesaSetabuPage() {
   const { getRuleByDesa } = usePeraturan();
   const [data, setData] = useState<PeraturanById[]>([]);
@@ -16,15 +15,14 @@ export default function DesaSetabuPage() {
       await getRuleByDesa.getRuleByDesa(NamaDesa.setabu);
     }
     fetchData();
-  }, [])
+  }, []);
 
   React.useEffect(() => {
     if (Array.isArray(getRuleByDesa.payload?.data)) {
       setData(getRuleByDesa.payload.data);
       console.log(getRuleByDesa.payload?.data);
     }
-  }, [getRuleByDesa.payload])
-
+  }, [getRuleByDesa.payload]);
 
   const [expanded, setExpanded] = useState<number[]>([]);
 
@@ -50,9 +48,14 @@ export default function DesaSetabuPage() {
 
         {/* Description Section */}
         <div className="w-full lg:w-1/2">
-          <h1 className="text-6xl font-bold text-green-900 mb-4">Desa Setabu</h1>
+          <h1 className="text-6xl font-bold text-green-900 mb-4">
+            Desa Setabu
+          </h1>
           <p className="text-gray-700 text-xl leading-relaxed">
-            Desa Setabu merupakan desa pesisir dengan kekayaan laut yang melimpah dan budaya masyarakat yang kuat. Warga hidup berdampingan secara harmonis dengan alam serta memegang teguh nilai-nilai tradisional.
+            Desa Setabu merupakan desa pesisir dengan kekayaan laut yang
+            melimpah dan budaya masyarakat yang kuat. Warga hidup berdampingan
+            secara harmonis dengan alam serta memegang teguh nilai-nilai
+            tradisional.
           </p>
 
           {/* Statistics */}
@@ -60,13 +63,13 @@ export default function DesaSetabuPage() {
             <div className="flex-1 border rounded-xl p-5 bg-white shadow-sm text-center">
               <p className="text-base text-gray-500">Jumlah Penduduk</p>
               <p className="text-green-800 text-5xl font-extrabold">
-                6<span className="text-lg font-medium"> ribu</span>
+                3,356<span className="text-lg font-medium"> ribu</span>
               </p>
             </div>
             <div className="flex-1 border rounded-xl p-5 bg-white shadow-sm text-center">
               <p className="text-base text-gray-500">Luas Wilayah</p>
               <p className="text-green-800 text-5xl font-extrabold">
-                18<span className="text-lg font-medium"> km²</span>
+                34,54<span className="text-lg font-medium"> km²</span>
               </p>
             </div>
           </div>

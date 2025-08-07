@@ -15,14 +15,14 @@ export default function DesaBinalawanPage() {
       await getRuleByDesa.getRuleByDesa(NamaDesa.enreukan);
     }
     fetchData();
-  }, [])
+  }, []);
 
   React.useEffect(() => {
     if (Array.isArray(getRuleByDesa.payload?.data)) {
       setData(getRuleByDesa.payload.data);
       console.log(getRuleByDesa.payload?.data);
     }
-  }, [getRuleByDesa.payload])
+  }, [getRuleByDesa.payload]);
 
   const [expanded, setExpanded] = useState<number[]>([]);
 
@@ -48,9 +48,13 @@ export default function DesaBinalawanPage() {
 
         {/* Deskripsi */}
         <div className="w-full lg:w-1/2">
-          <h1 className="text-6xl font-bold text-green-900 mb-4">Desa Bambangan</h1>
+          <h1 className="text-6xl font-bold text-green-900 mb-4">
+            Desa Bambangan
+          </h1>
           <p className="text-gray-700 text-xl leading-relaxed">
-            Desa Binalawan adalah desa yang terletak di kawasan tropis dengan komunitas yang aktif dan berbudaya. Dikenal karena keindahan alamnya serta kehidupan masyarakat yang harmonis.
+            Desa Binalawan adalah desa yang terletak di kawasan tropis dengan
+            komunitas yang aktif dan berbudaya. Dikenal karena keindahan alamnya
+            serta kehidupan masyarakat yang harmonis.
           </p>
 
           {/* Statistik */}
@@ -58,13 +62,13 @@ export default function DesaBinalawanPage() {
             <div className="flex-1 border rounded-xl p-5 bg-white shadow-sm text-center">
               <p className="text-base text-gray-500">Jumlah Penduduk</p>
               <p className="text-green-800 text-5xl font-extrabold">
-                7<span className="text-lg font-medium"> ribu</span>
+                2,647<span className="text-lg font-medium"> ribu</span>
               </p>
             </div>
             <div className="flex-1 border rounded-xl p-5 bg-white shadow-sm text-center">
               <p className="text-base text-gray-500">Luas Wilayah</p>
               <p className="text-green-800 text-5xl font-extrabold">
-                22<span className="text-lg font-medium"> km²</span>
+                21,88<span className="text-lg font-medium"> km²</span>
               </p>
             </div>
           </div>

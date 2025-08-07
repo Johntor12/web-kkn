@@ -6,7 +6,6 @@ import { usePeraturan } from "@/hooks/use-rule";
 import { NamaDesa, PeraturanById } from "@/type/data";
 import Link from "next/link";
 
-
 export default function DesaBinalawanPage() {
   const { getRuleByDesa } = usePeraturan();
   const [data, setData] = useState<PeraturanById[]>([]);
@@ -16,14 +15,14 @@ export default function DesaBinalawanPage() {
       await getRuleByDesa.getRuleByDesa(NamaDesa.binalawan);
     }
     fetchData();
-  }, [])
+  }, []);
 
   React.useEffect(() => {
     if (Array.isArray(getRuleByDesa.payload?.data)) {
       setData(getRuleByDesa.payload.data);
       console.log(getRuleByDesa.payload?.data);
     }
-  }, [getRuleByDesa.payload])
+  }, [getRuleByDesa.payload]);
 
   const [expanded, setExpanded] = useState<number[]>([]);
 
@@ -49,9 +48,13 @@ export default function DesaBinalawanPage() {
 
         {/* Description Section */}
         <div className="w-full lg:w-1/2">
-          <h1 className="text-6xl font-bold text-green-900 mb-4">Desa Binalawan</h1>
+          <h1 className="text-6xl font-bold text-green-900 mb-4">
+            Desa Binalawan
+          </h1>
           <p className="text-gray-700 text-xl leading-relaxed">
-            Desa Binalawan adalah desa yang terletak di kawasan tropis dengan komunitas yang aktif dan berbudaya. Dikenal karena keindahan alamnya serta kehidupan masyarakat yang harmonis.
+            Desa Binalawan adalah desa yang terletak di kawasan tropis dengan
+            komunitas yang aktif dan berbudaya. Dikenal karena keindahan alamnya
+            serta kehidupan masyarakat yang harmonis.
           </p>
 
           {/* Statistics */}
@@ -59,13 +62,13 @@ export default function DesaBinalawanPage() {
             <div className="flex-1 border rounded-xl p-5 bg-white shadow-sm text-center">
               <p className="text-base text-gray-500">Jumlah Penduduk</p>
               <p className="text-green-800 text-5xl font-extrabold">
-                12<span className="text-lg font-medium"> ribu</span>
+                2,638<span className="text-lg font-medium"> ribu</span>
               </p>
             </div>
             <div className="flex-1 border rounded-xl p-5 bg-white shadow-sm text-center">
               <p className="text-base text-gray-500">Luas Wilayah</p>
               <p className="text-green-800 text-5xl font-extrabold">
-                25<span className="text-lg font-medium"> km²</span>
+                18,86<span className="text-lg font-medium"> km²</span>
               </p>
             </div>
           </div>

@@ -12,9 +12,9 @@ const VisiMisi = () => {
         </h2>
 
         <p className="text-[1vw] text-black mb-[1.2vw] leading-[1.7vw]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam,
+          Mewujudkan Kabupaten Nunukan Sebagai Pusat Pertumbuhan Ekonomi
+          Berbasis Agrobisnis Menuju Masyarakat Yang Maju, Aman, Adil Dan
+          Sejahtera
         </p>
 
         <button className="relative overflow-hidden group font-semibold px-[1.2vw] h-[2.7vw] rounded-md mb-[1.5vw] shadow-md text-[1vw] text-white">
@@ -27,9 +27,8 @@ const VisiMisi = () => {
         </button>
 
         <p className="text-[1vw] text-black mb-[1.2vw] leading-[1.7vw]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam,
+          Untuk mencapai dan mewujudkan visi Kecamatan Sebatik Barat, maka
+          dirumuskan beberapa misi, sebagai berikut:
         </p>
 
         <button className="relative overflow-hidden group font-semibold px-[1.2vw] h-[2.7vw] rounded-md mb-[1vw] shadow-md text-[1vw] text-white">
@@ -42,11 +41,13 @@ const VisiMisi = () => {
         </button>
 
         <ol className="list-decimal list-inside text-black text-[1vw] space-y-[0.5vw] mt-[0.8vw]">
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</li>
           <li>
-            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            a. Mewujudkan tata kelola pemerintahan (kecamatan dan desa) yang
+            baik, transparan dan dapat dipertanggungjawabkan
           </li>
-          <li>Ut enim ad minim veniam,</li>
+          <li>b. Mewujudkan pelayanan publik yang profesional;</li>
+          <li>c. Meningkatkan kualitas dan kapasitas sumber daya aparatur;</li>
+          <li>d. Meningkatkan peran serta dan partisipasi masyarakat</li>
         </ol>
       </div>
 

@@ -5,11 +5,11 @@ const StrukturOrganisasi = () => {
   const data = [
     {
       jabatan: "Camat",
-      nama: "Lorem ipsum. S.Kom",
+      nama: "Sawaludin, S.H.",
     },
     {
       jabatan: "Sekre Camat",
-      nama: "Lorem ipsum. S.Kom",
+      nama: "Muhammad Said, S.H.",
     },
   ];
 
@@ -29,7 +29,7 @@ const StrukturOrganisasi = () => {
               <img
                 width={1000}
                 height={1000}
-                src="/strukturorganisasi/camat.svg"
+                src="/strukturorganisasi/Bapak_Camat_Sebatik_Barat.jpg"
                 alt={item.jabatan}
                 className="w-full h-full object-cover"
               />
@@ -38,9 +38,7 @@ const StrukturOrganisasi = () => {
               <p className="text-gray-500 text-base font-medium">
                 {item.jabatan}
               </p>
-              <p className="text-gray-700 font-semibold text-lg">
-                {item.nama}
-              </p>
+              <p className="text-gray-700 font-semibold text-lg">{item.nama}</p>
             </div>
           </div>
         ))}
