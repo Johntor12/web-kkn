@@ -12,10 +12,12 @@ const ProfilPemerintahan = () => {
         Profil Pemerintahan
       </h1>
       <div className="font-fustat text-gray-secondary text-[1.111vw]">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-        quisquam iste delectus! Veritatis reprehenderit facilis et eum quibusdam
-        nobis, maiores quidem sit cumque sed ducimus dolorem consequatur
-        aspernatur blanditiis doloremque.
+        Sebatik Barat adalah sebuah kecamatan yang berada di Kabupaten Nunukan,
+        Provinsi Kalimantan Utara, Indonesia. Wilayah ini terletak di Pulau
+        Sebatik, sebuah pulau kecil yang secara geografis terbagi antara dua
+        negara, yaitu Indonesia dan Malaysia. Sebatik Barat merupakan salah satu
+        kecamatan di sisi Indonesia yang berbatasan langsung dengan wilayah
+        Sabah, Malaysia.
       </div>
       <div className="flex flex-row mt-[0.833vw] gap-[1.833vw]">
         {links.map(({ text, path }) => (
@@ -33,7 +35,6 @@ const ProfilPemerintahan = () => {
     </div>
   );
 };
-
 
 const About = () => {
   return (

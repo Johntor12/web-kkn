@@ -58,13 +58,13 @@ const StatisticsDisplay: React.FC = () => {
     <main>
       <div className="flex gap-64 items-center">
         <StatisticCard
-          value="XX ribu"
+          value="14 ribu"
           label="Penduduk"
           width="w-[374px]"
           height="h-[335px]"
         />
         <StatisticCard
-          value="XX km"
+          value="93, 26 HA"
           unit="2"
           label="Luas Wilayah"
           width="w-[410px]"

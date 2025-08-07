@@ -38,6 +38,30 @@ const pendidikanData = [
       "5P33+9MG, Liang Bunyu, Kec. Sebatik Bar., Kabupaten Nunukan, Kalimantan Utara 77483",
     gambar: "/pendidikan/sd3.jpg",
   },
+  {
+    nama: "SDN 001 Sebatik Barat",
+    alamat:
+      "3RF6+69C, Setabu, Kec. Sebatik Bar., Kabupaten Nunukan, Kalimantan Utara 77483",
+    gambar: "/pendidikan/sd3.jpg",
+  },
+  {
+    nama: "SDN 002 Sebatik Barat",
+    alamat:
+      "4P8V+W6Q, Liang Bunyu, Kec. Sebatik Bar., Kabupaten Nunukan, Kalimantan Utara 77483",
+    gambar: "/pendidikan/sd3.jpg",
+  },
+  {
+    nama: "SDN 003 Sebatik Barat",
+    alamat:
+      "5P33+5JQ, Bambangan, Kec. Sebatik Bar., Kabupaten Nunukan, Kalimantan Utara 77483",
+    gambar: "/pendidikan/sd3.jpg",
+  },
+  {
+    nama: "SDN 004 Sebatik Barat",
+    alamat:
+      "3QWF+HH8, Desa, Binalawan, Kec. Sebatik Bar., Kabupaten Nunukan, Kalimantan Utara 77483",
+    gambar: "/pendidikan/sd3.jpg",
+  },
 ];
 
 const PendidikanPage = () => {
