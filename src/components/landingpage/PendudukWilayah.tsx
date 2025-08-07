@@ -64,7 +64,7 @@ const StatisticsDisplay: React.FC = () => {
           height="h-[335px]"
         />
         <StatisticCard
-          value="93, 26 HA"
+          value="93,2ha"
           unit="2"
           label="Luas Wilayah"
           width="w-[410px]"
